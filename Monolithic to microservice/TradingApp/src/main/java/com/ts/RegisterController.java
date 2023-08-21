@@ -44,7 +44,8 @@ public class RegisterController {
 	@RequestMapping(value = "/users/register", method = RequestMethod.POST)
 	@ResponseBody
 	public String registerUser(@RequestBody User user)
-	{
+	{	
+		user.setBalance(100000.0);
 		users.put(user.getUserId(), user);
 		return "<html><body bgcolor=\"coral\">Registered Successfully "+" <a href='http://localhost:8080/index.html'>home to login</a>\"+\"</body></html>";
 	}
